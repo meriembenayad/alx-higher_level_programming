@@ -9,4 +9,3 @@ if __name__ == "__main__":
         for item in range(1, arg):
             sum += int(sys.argv[item])
         print("{:d}".format(sum))
-
