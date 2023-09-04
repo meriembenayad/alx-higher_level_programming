@@ -3,6 +3,8 @@
 
 
 class Rectangle:
+    """ class Rectangle that defines a rectangle """
+
     def __init__(self, width=0, height=0):
         """ Method Instantiation the instance
             Args:
@@ -12,8 +14,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    """ ================================== """
-    """ Private instance attribute: width: """
     @property
     def width(self):
         """ Getter for the private instance attribute width
@@ -38,8 +38,6 @@ class Rectangle:
 
         self.__width = value
 
-    """ ================================== """
-    """ Private instance attribute: height """
     @property
     def height(self):
         """ Getter for the private instance attribute height
@@ -64,9 +62,6 @@ class Rectangle:
 
         self.__height = value
 
-    """ ============================= """
-    """ Private instance method: AREA """
-
     def area(self):
         """ Method that returns area of rectangle """
         return self.__width * self.__height
@@ -83,8 +78,6 @@ class Rectangle:
 
         return 2 * (self.__width + self.__height)
 
-    """ ============================= """
-    """ print() and str(): print the rectangle with the character # """
     def __str__(self):
         """ Method thats returns a string representation of the rectangle """
         string = ""
