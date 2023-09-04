@@ -3,6 +3,8 @@
 
 
 class Rectangle:
+    """ class Rectangle that defines a rectangle """
+
     def __init__(self, width=0, height=0):
         """ Method Instantiation the instance
             Args:
@@ -16,6 +18,8 @@ class Rectangle:
     def width(self):
         """ Getter for the private instance attribute width
             Method that returns the value of the width
+            Returns:
+                rectangle width
         """
         return self.__width
 
@@ -31,6 +35,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
+
         if value < 0:
             raise ValueError("width must be >= 0")
 
@@ -40,6 +45,8 @@ class Rectangle:
     def height(self):
         """ Getter for the private instance attribute height
             Method that returns the value of the height
+            Returns:
+                rectangle heigh
         """
         return self.__height
 
@@ -55,6 +62,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
+
         if value < 0:
             raise ValueError("height must be >= 0")
 
