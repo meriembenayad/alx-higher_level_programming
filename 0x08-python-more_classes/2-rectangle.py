@@ -12,8 +12,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    """ ================================== """
-    """ Private instance attribute: width: """
     @property
     def width(self):
         """ Getter for the private instance attribute width
@@ -38,8 +36,6 @@ class Rectangle:
 
         self.__width = value
 
-    """ ================================== """
-    """ Private instance attribute: height """
     @property
     def height(self):
         """ Getter for the private instance attribute height
@@ -64,15 +60,9 @@ class Rectangle:
 
         self.__height = value
 
-    """ ============================= """
-    """ Private instance method: AREA """
-
     def area(self):
         """ Method that returns area of rectangle """
         return self.__width * self.__height
-
-    """ ============================= """
-    """ Private instance method: PERIMETER """
 
     def perimeter(self):
         """ Method thats returns perimeter of a rectangle
