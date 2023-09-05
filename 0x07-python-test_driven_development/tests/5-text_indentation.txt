@@ -1,0 +1,10 @@
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+>>> text_indentation("""Testing for? indentation 1.""")
+Testing for?
+<BLANKLINE>
+indentation 1.
+<BLANKLINE>
+
+>>> print("""Testing""")
+Testing

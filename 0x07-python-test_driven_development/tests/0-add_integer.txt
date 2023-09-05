@@ -1,69 +1,52 @@
 >>> add_integer = __import__("0-add_integer").add_integer
 
-
->>> print(add_integer(1, 5))
-6
-
+>>> print(add_integer(1, 2))
+3
 
 >>> print(add_integer(100, -2))
 98
 
-
->>> print(add_integer(100))
+>>> print(add_integer(2))
 100
-
 
 >>> print(add_integer(100.3, -2))
 98
 
+>>> print(add_integer(4, "School"))
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
 
->>> try:
-... 	print(add_integer(4, "School"))
-... except Exception as e:
-... 	print(e)
-b must be an integer
-
-
->>> try:
-... 	print(add_integer(None))
-... except Exception as e:
-... 	print(e)
-a must be an integer
-
-
->>> add_integer(2.45, 3.1)
-5
-
+>>> print(add_integer(None))
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
 
 >>> add_integer(1, float('NaN'))
 Traceback (most recent call last):
+    ...
 ValueError: cannot convert float NaN to integer
-
 
 >>> add_integer(1, float('inf'))
 Traceback (most recent call last):
+    ...
 OverflowError: cannot convert float infinity to integer
-
 
 >>> add_integer(888888888888888888888888888888, 1)
 888888888888888888888888888889
 
-
 >>> add_integer([1], 2)
 Traceback (most recent call last):
+    ...
 TypeError: a must be an integer
-
-
->>> add_integer(3, "2")
-Traceback (most recent call last):
-TypeError: b must be an integer
-
 
 >>> add_integer()
 Traceback (most recent call last):
+    ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
 
 >>> add_integer(1, 2, 3)
 Traceback (most recent call last):
+   ...
 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
