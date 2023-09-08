@@ -14,12 +14,6 @@ def matrix_divided(matrix, div):
             TypeError: specify msg depends the case
             ZeroDivisionError: division by zero
     """
-    if div == float('inf') or div == -float('inf') or div != div:
-        div = 10
-
-    if type(div) is not int and type(div) is not float:
-        raise TypeError("div must be a number")
-
     if not isinstance(matrix, list):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
