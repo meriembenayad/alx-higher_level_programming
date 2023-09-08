@@ -6,7 +6,7 @@
 """
 
 
-import numpy
+import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
@@ -24,4 +24,4 @@ def lazy_matrix_mul(m_a, m_b):
                 or row of the list not equal
                 or m_a & m_b can't multiply
     """
-    return matmul(m_a, m_b)
+    return np.matmul(m_a, m_b)
