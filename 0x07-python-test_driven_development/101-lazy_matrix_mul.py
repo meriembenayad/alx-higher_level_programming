@@ -2,13 +2,13 @@
 """
     Module that multiplies 2 matrices,
     Using module NumPy
+    import module numpy
 """
-""" import module numpy """
 
 
+import numpy
 
 
-import numpy as np
 def lazy_matrix_mul(m_a, m_b):
     """
         Multiplies two matrices using the NumPy module.
@@ -24,4 +24,4 @@ def lazy_matrix_mul(m_a, m_b):
                 or row of the list not equal
                 or m_a & m_b can't multiply
     """
-    return np.matmul(m_a, m_b)
+    return matmul(m_a, m_b)
