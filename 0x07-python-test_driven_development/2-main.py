@@ -35,3 +35,7 @@ try:
     print(matrix_divided(matrix_div0, 0))
 except Exception as e:
     print(e)
+
+print(matrix_divided([[14, 7], [21, -49], [21, 65]], float('inf')))
+
+print(matrix_divided([[3, 9], [12, 15]], -3))

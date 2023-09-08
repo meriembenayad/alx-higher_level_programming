@@ -40,14 +40,16 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     new_matrix = []
-    for row in matrix:
-        new_row = []
-        for col in row:
-            if div == float('inf'):
-                new_row.append(0.0)
-            else:
+    if div == float('inf'):
+        for row in matrix:
+            new_row = [0.0] * len(row)
+            new_matrix.append(new_row)
+    else:
+        for row in matrix:
+            new_row = []
+            for col in row:
                 new_row.append(round(col / div, 2))
 
-        new_matrix.append(new_row)
+            new_matrix.append(new_row)
 
     return new_matrix
