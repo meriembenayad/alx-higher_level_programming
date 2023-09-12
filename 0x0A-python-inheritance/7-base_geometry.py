@@ -20,7 +20,7 @@ class BaseGeometry:
         """
         function that validate a value
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
 
         if value <= 0:
