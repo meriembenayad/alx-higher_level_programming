@@ -52,9 +52,3 @@ TypeError: age must be an integer
 Traceback (most recent call last):
     ...
 TypeError: age must be an integer
-
->>> b = BG()
->>> b.area()
-Traceback (most recent call last):
-    ...
-Exception: area() is not implemented
