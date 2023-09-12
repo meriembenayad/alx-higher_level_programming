@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-7. Integer validator
+class BaseGeometry
 """
 
 
