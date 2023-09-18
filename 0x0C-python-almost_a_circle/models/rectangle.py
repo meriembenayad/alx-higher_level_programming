@@ -10,16 +10,21 @@ class Rectangle(Base):
             Initialize a rectangle instance with the given attributes.
             Call the super class with id
             Args:
-                width (int): width of rectangle
-                height (int): height of rectangle
-                x (int):
-                y (int):
-                id (int):
+                width (int): The width of the new Rectangle.
+                height (int): The height of the new Rectangle.
+                x (int): The x coordinate of the new Rectangle.
+                y (int): The y coordinate of the new Rectangle.
+                id (int): The identity of the new Rectangle.
+            Raises:
+                TypeError: If either of width or height is not an int.
+                ValueError: If either of width or height <= 0.
+                TypeError: If either of x or y is not an int.
+                ValueError: If either of x or y < 0.
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -116,10 +121,14 @@ class Rectangle(Base):
 
     def area(self):
         """ Returns area value of the rectangleinstance """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """ Prints in stdout the rectangle with '#' """
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
         for i in range(self.y):
             print("")
 
@@ -147,20 +156,46 @@ class Rectangle(Base):
                     - 5th argument should be the y attribute
                 **kwargs (dict): key/value argument
         """
-        attributes = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            setattr(self, attributes[i], arg)
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
 
-        if len(args) == 0:
+        elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif k == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """ Returns the dictionary representation of Rectangle """
         return {
             "id": self.id,
-            "width": self.width,
-            "height": self.height,
-            "x": self.x,
-            "y": self.y
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.__x,
+            "y": self.__y
         }
