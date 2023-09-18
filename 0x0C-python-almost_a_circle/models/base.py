@@ -71,34 +71,33 @@ class Base:
         """save ti file csv"""
         import csv
 
-        filename = cls.__name__ + '.csv'
-        try:
-            listcsv = [obj.to_dictionary() for obj in list_objs]
-        except FileNotFoundError:
-            listcsv = '[]'
-        keys = listcsv[0].keys()
-        with open(filename, mode='w', encoding="utf-8") as filecsv:
-            writer = listcsv.DictWriter(filecsv, keys)
-            writer.writeheader()
-            writer.writerows(listcsv)
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as filecsv:
+            if list_objs is None or list_objs == []:
+                filecsv.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(filecsv, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """load from file csv"""
         import csv
-        filename = cls.__name__ + '.csv'
-        if not os.path.isfile(filename):
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as filecsv:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(filecsv, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
             return []
-
-        listcsv = []
-        with open(filename, mode='r', encoding="utf-8") as filecsv:
-            reader = listcsv.DictReader(filecsv)
-
-            for row in reader:
-                for key, val in row.items():
-                    try:
-                        row[key] = int(val)
-                    except ValueError:
-                        pass
-                listcsv.append(row)
-        return [cls.create(**dic) for dic in listcsv]
