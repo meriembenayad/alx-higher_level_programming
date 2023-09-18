@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """class base"""
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -68,9 +70,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """save ti file csv"""
-        import csv
-
+        """save file csv"""
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as filecsv:
             if list_objs is None or list_objs == []:
@@ -87,7 +87,6 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """load from file csv"""
-        import csv
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r", newline="") as filecsv:
@@ -101,3 +100,40 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Draw Rectangles and Squares using the turtle module. """
+        tut_obj = turtle.Turtle()
+        tut_obj.screen.bgcolor("black")
+        tut_obj.pensize(2)
+        tut_obj.shape("turtle")
+        tut_obj.speed(5)
+
+        tut_obj.color("green")
+        for rect in list_rectangles:
+            tut_obj.showturtle()
+            tut_obj.up()
+            tut_obj.goto(rect.x, rect.y)
+            tut_obj.down()
+            for i in range(2):
+                tut_obj.forward(rect.width)
+                tut_obj.left(90)
+                tut_obj.forward(rect.height)
+                tut_obj.left(90)
+            tut_obj.hideturtle()
+
+        tut_obj.color("yellow")
+        for sq in list_squares:
+            tut_obj.showturtle()
+            tut_obj.up()
+            tut_obj.goto(sq.x, sq.y)
+            tut_obj.down()
+            for i in range(2):
+                tut_obj.forward(sq.width)
+                tut_obj.left(90)
+                tut_obj.forward(sq.height)
+                tut_obj.left(90)
+            tut_obj.hideturtle()
+
+        turtle.exitonclick()
