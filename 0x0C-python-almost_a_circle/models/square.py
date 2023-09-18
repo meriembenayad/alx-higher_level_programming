@@ -1,62 +1,78 @@
 #!/usr/bin/python3
+""" class square """
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class Square(Rectangle):
-    """ Square class that represents a square """
+    """class square"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """
-            Initialize a square instance with given attribute
-            Call supper class with id, x, y, width, height
-        """
+        """initialize class"""
         super().__init__(size, size, x, y, id)
-
-    def __str__(self):
-        """ Return a string representation of the square """
-        return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        """ Size Getter """
+        """gets the size"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """
-            Size Setter
-            Assign width and height with the same value
-            Setter should have the same value validation as the Rectangle
-            for width and heigh
-        """
+        """sets the size"""
         self.width = value
         self.height = value
 
-    def update(self, *args, **kwargs):
-        """
-            Assigns an argument to each attribute
-            Args:
-                *args (int): arguments
-                    - 1st argument should be the id attribute
-                    - 2nd argument should be the size attribute
-                    - 3th argument should be the x attribute
-                    - 4th argument should be the y attribute
-                **kwargs (dict): key/value argument
-        """
-        attributes = ["id", "size", "x", "y"]
-        for i, arg in enumerate(args):
-            setattr(self, attributes[i], arg)
+    def __str__(self):
+        """print string"""
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.size))
 
-        if len(args) == 0:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+    def update(self, *args, **kwargs):
+        """Update the Square.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, val in kwargs.items():
+                if key == "id":
+                    if val is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = val
+                elif key == "size":
+                    self.size = val
+                elif key == "x":
+                    self.x = val
+                elif key == "y":
+                    self.y = val
 
     def to_dictionary(self):
-        """ Returns the dictionary representation of a Square """
+        """dictionary"""
         return {
             "id": self.id,
-            "size": self.size,
+            "size": self.width,
             "x": self.x,
             "y": self.y
         }
