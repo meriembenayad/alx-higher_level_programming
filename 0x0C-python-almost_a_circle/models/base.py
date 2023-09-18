@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """class base"""
 import json
-import os.path
 
 
 class Base:
@@ -47,21 +46,17 @@ class Base:
             inst = cls(1, 1)
         if cls.__name__ == "Square":
             inst = cls(1)
-        if inst:
-            inst.update(**dictionary)
-            return inst
+        inst.update(**dictionary)
+        return inst
 
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        filename = cls.__name__ + '.json'
+        filename = str(cls.__name__ + '.json')
         try:
             with open(filename, mode="r") as filejson:
-                list_dicts = cls.from_json_string(filejson.read())
-
-                for i, j in enumerate(list_dicts):
-                    list_dicts[i] = cls.create(**list_dicts[i])
-                return list_dicts
+                list_dicts = Base.from_json_string(filejson.read())
+                return [cls.create(**dicti) for dicti in list_dicts]
         except FileNotFoundError:
             return []
 

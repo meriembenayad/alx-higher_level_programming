@@ -6,7 +6,6 @@ from models.base import Base
 from models.rectangle import Rectangle
 import sys
 from io import StringIO
-import pep8
 
 
 class TestSquare(unittest.TestCase):
