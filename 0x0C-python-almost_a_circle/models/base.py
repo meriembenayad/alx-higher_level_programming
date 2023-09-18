@@ -19,18 +19,22 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
-        return json.dumps(list_dictionaries or [])
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return []
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
-        if list_objs is None:
-            list_objs = []
-        jsons = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
-
-        filename = cls.__name__ + 'json'
-        with open(filename, mode="w", encoding="utf-8") as filejson:
-            filejson.write(jsons)
+        filename = cls.__name__+".json"
+        with open(filename, 'w', encoding="utf-8") as filejson:
+            list_dict = []
+            if list_objs is None or len(list_objs) == 0:
+                json.dump(json.loads(cls.to_json_string(list_dict)), filejson)
+            else:
+                for obj in list_objs:
+                    list_dict.append(obj.to_dictionary())
+                json.dump(json.loads(cls.to_json_string(list_dict)), filejson)
 
     @staticmethod
     def from_json_string(json_string):
@@ -55,8 +59,12 @@ class Base:
         filename = str(cls.__name__ + '.json')
         try:
             with open(filename, mode="r") as filejson:
-                list_dicts = Base.from_json_string(filejson.read())
-                return [cls.create(**dicti) for dicti in list_dicts]
+                new_list = []
+                list_dicts = cls.from_json_string(
+                    json.dumps(json.load(filejson)))
+                for di in list_dicts:
+                    new_list.append(cls.create(**di))
+                return new_list
         except FileNotFoundError:
             return []
 
