@@ -103,37 +103,33 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """ Draw Rectangles and Squares using the turtle module. """
-        tut_obj = turtle.Turtle()
-        tut_obj.screen.bgcolor("black")
-        tut_obj.pensize(2)
-        tut_obj.shape("turtle")
-        tut_obj.speed(5)
+        """Opens a window and draws all the Rectangles and Squares."""
+        screen = turtle.Screen()
+        screen.bgcolor("black")
+        screen.title("Turtle Drawing")
 
-        tut_obj.color("green")
+        t = turtle.Turtle()
+        t.shape("turtle")
+        t.speed(1)
+
         for rect in list_rectangles:
-            tut_obj.showturtle()
-            tut_obj.up()
-            tut_obj.goto(rect.x, rect.y)
-            tut_obj.down()
-            for i in range(2):
-                tut_obj.forward(rect.width)
-                tut_obj.left(90)
-                tut_obj.forward(rect.height)
-                tut_obj.left(90)
-            tut_obj.hideturtle()
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            t.color("gold")
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
 
-        tut_obj.color("yellow")
-        for sq in list_squares:
-            tut_obj.showturtle()
-            tut_obj.up()
-            tut_obj.goto(sq.x, sq.y)
-            tut_obj.down()
-            for i in range(2):
-                tut_obj.forward(sq.width)
-                tut_obj.left(90)
-                tut_obj.forward(sq.height)
-                tut_obj.left(90)
-            tut_obj.hideturtle()
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            t.color("silver")
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
 
-        turtle.exitonclick()
+        screen.exitonclick()
