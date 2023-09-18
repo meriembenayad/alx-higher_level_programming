@@ -36,7 +36,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
-        return json.loads(json_string or "[]")
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -57,9 +59,9 @@ class Base:
             with open(filename, mode="r") as filejson:
                 list_dicts = cls.from_json_string(filejson.read())
 
-            for i, j in enumerate(list_dicts):
-                list_dicts[i] = cls.create(**list_dicts[i])
-            return list_dicts
+                for i, j in enumerate(list_dicts):
+                    list_dicts[i] = cls.create(**list_dicts[i])
+                return list_dicts
         except FileNotFoundError:
             return []
 
