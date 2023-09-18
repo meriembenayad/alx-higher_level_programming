@@ -55,10 +55,13 @@ class Base:
         filename = cls.__name__ + '.json'
         if not os.path.isfile(filename):
             return []
-        else:
-            with open(filename, mode="r", encoding="utf-8") as filejson:
-                list_Dicts = cls.from_json_string(filejson.read())
-            return [cls.create(**inst) for inst in list_Dicts]
+
+        with open(filename, mode="r", encoding="utf-8") as filejson:
+            list_Dicts = cls.from_json_string(filejson.read())
+
+        for i, j in enumerate(list_Dicts):
+            list_Dicts[i] = cls.create(**list_Dicts[i])
+        return list_Dicts
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
