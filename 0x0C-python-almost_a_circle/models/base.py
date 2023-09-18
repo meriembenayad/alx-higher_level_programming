@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines a base model class."""
 import json
 import os
 import csv
@@ -96,8 +97,8 @@ class Base:
                 - Convert each object to a dictionary,
                 by using to_dictionary method
                 - Check if class Rectangle or Square:
-                    - Create a list of values in the order of id, width, height, x, y
-                    - create a list of values in the order of id, size, x, y
+                    - Create a list of values: id, width, height, x, y
+                    - create a list of values: id, size, x, y
         """
         filename = cls.__name__ + ".csv"
         with open(filename, mode="w", encoding="utf-8") as filecsv:
@@ -105,12 +106,21 @@ class Base:
             for obj in list_objs:
                 obj_dict = obj.to_dictionary()
                 if cls.__name__ == "Rectangle":
-                    row = [obj_dict["id"], [obj_dict["width"],
-                                            obj_dict["height"], obj_dict["x"], obj_dict["y"]]]
+                    row = [
+                        obj_dict["id"],
+                        obj_dict["width"],
+                        obj_dict["height"],
+                        obj_dict["x"],
+                        obj_dict["y"]
+                    ]
 
                 if cls.__name__ == "Square":
-                    row = [obj_dict["id"], obj_dict["size"],
-                           obj_dict["x"], obj_dict["y"]]
+                    row = [
+                        obj_dict["id"],
+                        obj_dict["size"],
+                        obj_dict["x"],
+                        obj_dict["y"]
+                    ]
 
                 writer.writerow(row)
 
@@ -131,12 +141,21 @@ class Base:
             for row in reader:
                 row_list = ast.literal_eval(row[1])
                 if cls.__name__ == "Rectangle":
-                    obj_dict = {"id": int(row[0]), "width": row_list[0],
-                                "height": row_list[1], "x": row_list[2], "y": row_list[3]}
+                    obj_dict = {
+                        "id": int(row[0]),
+                        "width": row_list[0],
+                        "height": row_list[1],
+                        "x": row_list[2],
+                        "y": row_list[3]
+                    }
 
                 if cls.__name__ == "Square":
-                    obj_dict = {"id": int(row[0]), "size": row_list[0],
-                                "x": row_list[1], "y": row_list[2]}
+                    obj_dict = {
+                        "id": int(row[0]),
+                        "size": row_list[0],
+                        "x": row_list[1],
+                        "y": row_list[2]
+                    }
 
                 list_instances.append(cls.create(**obj_dict))
             return list_instances
