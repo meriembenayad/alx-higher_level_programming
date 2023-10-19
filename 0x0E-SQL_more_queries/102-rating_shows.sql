@@ -2,9 +2,9 @@
 -- Each record display: tv_shows.title - rating sum
 -- Sorted in descending order by the rating
 -- Use only one SELECT statement
-SELECT tvs.title, IFNULL(SUM(tvsr.rate), 0) AS total_rating
-FROM tv_shows AS tvs
-LEFT JOIN tv_show_ratings AS tvsr ON tvs.id =  tvsr.show_id
-GROUP BY tvs.title
+SELECT t.title, IFNULL(SUM(r.rate), 0) AS total_rating
+FROM tv_shows AS t
+LEFT JOIN tv_show_ratings AS r ON t.id =  r.show_id
+GROUP BY t.title
 ORDER BY total_rating DESC;
 
