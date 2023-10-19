@@ -2,8 +2,9 @@
 -- Each record display: tv_shows.title - rating sum
 -- Sorted in descending order by the rating
 -- Use only one SELECT statement
-SELECT `name`, SUM(`tv_show_ratings`.`rate`) 'rating' FROM `tv_genres`
-	INNER JOIN `tv_show_genres` ON `tv_genres`.`id` = `tv_show_genres`.`genre_id`
-	INNER JOIN `tv_show_ratings` ON `tv_show_genres`.`show_id` = `tv_show_ratings`.`show_id`
-	GROUP BY `name`
-	ORDER BY `rating` DESC;
+SELECT tvs.title, IFNULL(SUM(tvsr.rate), 0) AS total_rating
+FROM tv_shows AS tvs
+LEFT JOIN tv_show_ratings AS tvsr ON tvs.id =  tvsr.show_id
+GROUP BY tvs.title
+ORDER BY total_rating DESC;
+
