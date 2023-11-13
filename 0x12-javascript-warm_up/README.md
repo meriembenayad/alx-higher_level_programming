@@ -114,13 +114,29 @@ guillaume@ubuntu:~/0x12$
 </details>
 
 <details>
-<summary></summary>
+<summary>1. 3 languages</summary>
+
+Write a script that prints 3 lines:
+
+- The first line: “C is fun”
+- The second line: “Python is cool”
+- The third line: “JavaScript is amazing”
+- You must use `console.log(...)` to print all output
+- You are not allowed to use `var`
+
+```shell
+guillaume@ubuntu:~/0x12$ ./1-multi_languages.js 
+C is fun
+Python is cool
+JavaScript is amazing
+guillaume@ubuntu:~/0x12$ 
+```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `1-multi_languages.js`
 </details>
 
 <details>
