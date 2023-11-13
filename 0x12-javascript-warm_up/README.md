@@ -194,13 +194,28 @@ guillaume@ubuntu:~/0x12$
 </details>
 
 <details>
-<summary></summary>
+<summary>4. Create a sentence</summary>
+
+Write a script that prints two arguments passed to it, in the following format: “ is ”
+
+- You must use `console.log(...)` to print all output
+- You are not allowed to use `var`
+
+```shell
+guillaume@ubuntu:~/0x12$ ./4-concat.js c cool
+c is cool
+guillaume@ubuntu:~/0x12$ ./4-concat.js c 
+c is undefined
+guillaume@ubuntu:~/0x12$ ./4-concat.js
+undefined is undefined
+guillaume@ubuntu:~/0x12$ 
+```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `4-concat.js`
 </details>
 
 <details>
