@@ -166,17 +166,31 @@ guillaume@ubuntu:~/0x12$
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `2-arguments.js`
 </details>
 
 <details>
-<summary></summary>
+<summary>3. Value of my argument</summary>
 
+Write a script that prints the first argument passed to it:
+
+- If no arguments are passed to the script, print “No argument”
+- You must use `console.log(...)` to print all output
+- You are not allowed to use `var`
+- You are not allowed to use `length`
+
+```shell
+guillaume@ubuntu:~/0x12$ ./3-value_argument.js 
+No argument
+guillaume@ubuntu:~/0x12$ ./3-value_argument.js School
+School
+guillaume@ubuntu:~/0x12$ 
+```
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `3-value_argument.js`
 </details>
 
 <details>
