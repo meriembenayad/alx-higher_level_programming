@@ -98,29 +98,53 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>1. 3 languages</summary>
+<summary>1. Rectangle #1</summary>
 
-Write a script that prints 3 lines:
+Write a class `Rectangle` that defines a rectangle:
 
-- The first line: “C is fun”
-- The second line: “Python is cool”
-- The third line: “JavaScript is amazing”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
+- You must use the `class` notation for defining your class
+- The constructor must take 2 arguments `w` and `h`
+- Initialize the instance attribute `width` with the value of `w`
+- Initialize the instance attribute `height` with the value of `h`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./1-multi_languages.js 
-C is fun
-Python is cool
-JavaScript is amazing
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 1-main.js
+#!/usr/bin/node
+const Rectangle = require('./1-rectangle');
+
+const r1 = new Rectangle(2, 3);
+console.log(r1);
+console.log(r1.width);
+console.log(r1.height);
+
+const r2 = new Rectangle(2, -3);
+console.log(r2);
+console.log(r2.width);
+console.log(r2.height);
+
+const r3 = new Rectangle(2);
+console.log(r3);
+console.log(r3.width);
+console.log(r3.height);
+
+guillaume@ubuntu:~/0x13$ ./1-main.js
+Rectangle { width: 2, height: 3 }
+2
+3
+Rectangle { width: 2, height: -3 }
+2
+-3
+Rectangle { width: 2, height: undefined }
+2
+undefined
+guillaume@ubuntu:~/0x13$
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `1-multi_languages.js`
+- File: `1-rectangle.js`
 </details>
 
 <details>
