@@ -348,32 +348,41 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>6. Loop to languages</summary>
+<summary>6. Square #1</summary>
 
-Write a script that prints 3 lines: (like `1-multi_languages.js`) but by using an array of string and a loop
+Write a class `Square` that defines a square and inherits from `Square` of `5-square.js`:
 
-- The first line: “C is fun”
-- The second line: “Python is cool”
-- The third line: “JavaScript is amazing”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-- You are not allowed to use any `if/else` statement
-- You can use only one `console.log`
-- You must use a loop (`while`, `for`, etc.)
+- You must use the `class` notation for defining your class and `extends`
+- Create an instance method called `charPrint(c)` that prints the rectangle using the character `c`
+    - If `c` is `undefined`, use the character `X`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./6-multi_languages_loop.js 
-C is fun
-Python is cool
-JavaScript is amazing
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 6-main.js
+#!/usr/bin/node
+const Square = require('./6-square');
+
+const s1 = new Square(4);
+s1.charPrint();
+
+s1.charPrint('C');
+
+guillaume@ubuntu:~/0x13$ ./6-main.js
+XXXX
+XXXX
+XXXX
+XXXX
+CCCC
+CCCC
+CCCC
+CCCC
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `6-multi_languages_loop.js`
+- File: `6-square.js`
 </details>
 
 <details>
