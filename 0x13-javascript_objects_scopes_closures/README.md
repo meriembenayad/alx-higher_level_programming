@@ -476,34 +476,47 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>10. Factorial</summary>
+<summary>10. Number conversion</summary>
 
-Write a script that computes and prints a factorial
+Write a function that converts a number from base 10 to another base passed as argument:
 
-- The first argument is integer (argument can be cast as integer) used for computing the factorial
-- Factorial of `NaN` is `1`
-- You must do it recursively
-- You must use a function
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
+- Prototype: `exports.converter = function (base)`
+- You are not allowed to import any file
+- You are not allowed to declare any new variable (`var`, `let`, etc..)
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 
-1
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 3
-6
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 89
-1.6507955160908452e+136
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 333
-Infinity
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 10-main.js
+#!/usr/bin/node
+const converter = require('./10-converter').converter;
+
+let myConverter = converter(10);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
+
+
+myConverter = converter(16);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
+
+guillaume@ubuntu:~/0x13$ ./10-main.js
+2
+12
+89
+2
+c
+59
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `10-factorial.js`
+- File: `10-converter.js`
 </details>
 
 <details>
