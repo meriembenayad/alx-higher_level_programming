@@ -445,33 +445,34 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>9. Add</summary>
+<summary>9. Log me</summary>
 
-Write a script that prints the addition of 2 integers
+Write a function that prints the number of arguments already printed and the new argument value. (see example below)
 
-- The first argument is the first integer
-- The second argument is the second integer
-- You have to define a function with this prototype: `function add(a, b)`
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
+- Prototype: `exports.logMe = function (item)`
+- Output format: `<number arguments already printed>: <current argument value>`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./9-add.js 
-NaN
-guillaume@ubuntu:~/0x12$ ./9-add.js 1
-NaN
-guillaume@ubuntu:~/0x12$ ./9-add.js 1 7
-8
-guillaume@ubuntu:~/0x12$ ./9-add.js 13 89
-102
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 9-main.js
+#!/usr/bin/node
+const logMe = require('./9-logme').logMe;
+
+logMe("Hello");
+logMe("Best");
+logMe("School");
+
+guillaume@ubuntu:~/0x13$ ./9-main.js
+0: Hello
+1: Best
+2: School
+guillaume@ubuntu:~/0x13$
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `9-add.js`
+- File: `9-logme.js`
 </details>
 
 <details>
