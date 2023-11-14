@@ -547,7 +547,7 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>12. Object</summary>
+<summary>12. Sorted occurences</summary>
 
 Write a script that imports a dictionary of occurrences by user id and computes a dictionary of user ids by occurrence.
 
@@ -581,101 +581,29 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>13. Add file</summary>
+<summary>13. Concat files</summary>
 
-Write a function that returns the addition of 2 integers.
+Write a script that concats 2 files.
 
-- The function must be visible from outside
-- The name of the function must be `add`
-- You are not allowed to use `var`
-
-[Tip](https://51elliot.blogspot.com/2012/01/simple-intro-to-nodejs-module-scope.html)
+- The first argument is the file path of the first source file
+- The second argument is the file path of the second source file
+- The third argument is the file path of the destination
 
 ```shell
-guillaume@ubuntu:~/0x12$ cat 13-main.js
-#!/usr/bin/node
-const add = require('./13-add').add;
-console.log(add(3, 5));
-guillaume@ubuntu:~/0x12$ ./13-main.js
-8
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat fileA
+C is fun!
+guillaume@ubuntu:~/0x13$ cat fileB
+Python is Cool!!!
+guillaume@ubuntu:~/0x13$ ./102-concat.js fileA fileB fileC
+guillaume@ubuntu:~/0x13$ cat fileC
+C is fun!
+Python is Cool!!!
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `13-add.js`
-</details>
-
-<details>
-<summary>14. Const or not const</summary>
-
-Write a file that modifies the value of `myVar` to `333`
-
-```shell
-guillaume@ubuntu:~/0x12$ cat 100-main.js
-#!/usr/bin/node
-myVar = 89;
-require('./100-let_me_const')
-console.log(myVar);
-guillaume@ubuntu:~/0x12$ ./100-main.js
-333
-guillaume@ubuntu:~/0x12$ 
-```
-
-![Hell Yeah](hell_yeah.jpeg)
-
-Do you get it? Tweet! Post! Talk about it!
-
-Hint: Scope
-
-**This exercise doesn’t pass `semistandard`** so don’t worry about it.
-
-***
-**Repo:**
-- GitHub repository: `alx-higher_level_programming`
-- Directory: `0x13-javascript_objects_scopes_closures`
-- File: `100-let_me_const.js`
-</details>
-
-<details>
-<summary>15. Call me Moby</summary>
-
-Write a function that executes `x` times a function.
-
-- The function must be visible from outside
-- Prototype: `function (x, theFunction)`
-- You are not allowed to use `var`
-
-```shell
-guillaume@ubuntu:~/0x12$ cat 101-main.js
-#!/usr/bin/node
-const callMeMoby = require('./101-call_me_moby').callMeMoby;
-callMeMoby(3, function () {
-  console.log('C is fun');
-});
-guillaume@ubuntu:~/0x12$ ./101-main.js
-C is fun
-C is fun
-C is fun
-guillaume@ubuntu:~/0x12$ 
-```
-
-***
-**Repo:**
-- GitHub repository: `alx-higher_level_programming`
-- Directory: `0x13-javascript_objects_scopes_closures`
-- File: `101-call_me_moby.js`
-</details>
-
-
-<details>
-<summary></summary>
-
-***
-**Repo:**
-- GitHub repository: `alx-higher_level_programming`
-- Directory: `0x13-javascript_objects_scopes_closures`
-- File: `0-javascript_is_amazing.js`
+- File: `102-concat.js`
 </details>
