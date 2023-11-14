@@ -502,13 +502,34 @@ guillaume@ubuntu:~/0x12$
 </details>
 
 <details>
-<summary></summary>
+<summary>14. Const or not const</summary>
+
+Write a file that modifies the value of `myVar` to `333`
+
+```shell
+guillaume@ubuntu:~/0x12$ cat 100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+guillaume@ubuntu:~/0x12$ ./100-main.js
+333
+guillaume@ubuntu:~/0x12$ 
+```
+
+![Hell Yeah](hell_yeah.jpeg)
+
+Do you get it? Tweet! Post! Talk about it!
+
+Hint: Scope
+
+**This exercise doesn’t pass `semistandard`** so don’t worry about it.
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `100-let_me_const.js`
 </details>
 
 <details>
