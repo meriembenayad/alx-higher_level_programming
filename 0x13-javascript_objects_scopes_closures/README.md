@@ -207,27 +207,44 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>3. Value of my argument</summary>
+<summary>3. Rectangle #3</summary>
 
-Write a script that prints the first argument passed to it:
+Write a class `Rectangle` that defines a rectangle:
 
-- If no arguments are passed to the script, print “No argument”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-- You are not allowed to use `length`
+- You must use the `class` notation for defining your class
+- The constructor must take 2 arguments: `w` and `h`
+- Initialize the instance attribute `width` with the value of `w`
+- Initialize the instance attribute `height` with the value of `h`
+- If `w` or `h` is equal to 0 or not a positive integer, create an empty object
+- Create an instance method called `print()` that prints the rectangle using the character `X`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./3-value_argument.js 
-No argument
-guillaume@ubuntu:~/0x12$ ./3-value_argument.js School
-School
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 3-main.js
+#!/usr/bin/node
+const Rectangle = require('./3-rectangle');
+
+const r1 = new Rectangle(2, 3);
+r1.print();
+
+const r2 = new Rectangle(10, 5);
+r2.print();
+
+guillaume@ubuntu:~/0x13$ ./3-main.js
+XX
+XX
+XX
+XXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXX
+XXXXXXXXXX
+guillaume@ubuntu:~/0x13$ 
 ```
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `3-value_argument.js`
+- File: `3-rectangle.js`
 </details>
 
 <details>
