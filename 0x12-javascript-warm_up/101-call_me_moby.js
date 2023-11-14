@@ -4,4 +4,4 @@ function callMeMoby (x, theFunction) {
     theFunction();
   }
 }
-exports.callMeMoby = callMeMoby;
+module.exports.callMeMoby = callMeMoby;
