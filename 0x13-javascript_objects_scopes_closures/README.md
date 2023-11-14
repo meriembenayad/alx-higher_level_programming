@@ -386,38 +386,33 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>7. I love C</summary>
+<summary>7. Occurrences</summary>
 
-Write a script that prints `x` times “C is fun”
+Write a function that returns the number of occurrences in a list:
 
-- Where `x` is the first argument of the script
-- If the first argument can’t be converted to an integer, print “Missing number of occurrences”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-- You can use only two `console.log`
-- You must use a loop (`while`, `for`, etc.)
+- Prototype: `exports.nbOccurences = function (list, searchElement)`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 2
-C is fun
-C is fun
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 5
-C is fun
-C is fun
-C is fun
-C is fun
-C is fun
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 
-Missing number of occurrences
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js -3
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 7-main.js
+#!/usr/bin/node
+const nbOccurences = require('./7-occurrences').nbOccurences;
+
+console.log(nbOccurences([1, 2, 3, 4, 5, 6], 3));
+console.log(nbOccurences([3, 2, 3, 4, 5, 3, 3], 3));
+console.log(nbOccurences(["S", 12, "c", "S", "School", 8], "S"));
+
+guillaume@ubuntu:~/0x13$ ./7-main.js
+1
+4
+2
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `7-multi_c.js`
+- File: `7-occurrences.js`
 </details>
 
 <details>
