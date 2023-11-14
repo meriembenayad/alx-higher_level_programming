@@ -148,33 +148,62 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>2. Arguments</summary>
+<summary>2. Rectangle #2</summary>
 
-Write a script that prints a message depending of the number of arguments passed:
+Write a class `Rectangle` that defines a rectangle:
 
-- If no arguments are passed to the script, print “No argument”
-- If only one argument is passed to the script, print “Argument found”
-- Otherwise, print “Arguments found”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-
-Reference: [process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- You must use the `class` notation for defining your class
+- The constructor must take 2 arguments `w` and `h`
+- Initialize the instance attribute `width` with the value of `w`
+- Initialize the instance attribute `height` with the value of `h`
+- If `w` or `h` is equal to 0 or not a positive integer, create an empty object
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./2-arguments.js 
-No argument
-guillaume@ubuntu:~/0x12$ ./2-arguments.js Best
-Argument found
-guillaume@ubuntu:~/0x12$ ./2-arguments.js Best School
-Arguments found
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 2-main.js
+#!/usr/bin/node
+const Rectangle = require('./2-rectangle');
+
+const r1 = new Rectangle(2, 3);
+console.log(r1);
+console.log(r1.width);
+console.log(r1.height);
+
+const r2 = new Rectangle(2, -3);
+console.log(r2);
+console.log(r2.width);
+console.log(r2.height);
+
+const r3 = new Rectangle(2);
+console.log(r3);
+console.log(r3.width);
+console.log(r3.height);
+
+const r4 = new Rectangle(2, 0);
+console.log(r4);
+console.log(r4.width);
+console.log(r4.height);
+
+guillaume@ubuntu:~/0x13$ ./2-main.js
+Rectangle { width: 2, height: 3 }
+2
+3
+Rectangle {}
+undefined
+undefined
+Rectangle {}
+undefined
+undefined
+Rectangle {}
+undefined
+undefined
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `2-arguments.js`
+- File: `2-rectangle.js`
 </details>
 
 <details>
