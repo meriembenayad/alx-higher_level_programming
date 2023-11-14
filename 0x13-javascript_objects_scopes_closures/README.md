@@ -543,40 +543,41 @@ guillaume@ubuntu:~/0x13$
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `11-second_biggest.js`
+- File: `100-map.js`
 </details>
 
 <details>
 <summary>12. Object</summary>
 
-Update this script to replace the value `12` with `89`:
+Write a script that imports a dictionary of occurrences by user id and computes a dictionary of user ids by occurrence.
 
-- You are not allowed to use `var`
+- Your script must import `dict` from the file `101-data.js`
+- In the new dictionary:
+    - A key is a number of occurrences
+    - A value is the list of user ids
+- Print the new dictionary at the end
 
 ```shell
-guillaume@ubuntu:~/0x12$ cat 12-object.js
+guillaume@ubuntu:~/0x13$ cat 101-data.js
 #!/usr/bin/node
-const myObject = {
-  type: 'object',
-  value: 12
+exports.dict = {
+  89: 1,
+  90: 2,
+  91: 1,
+  92: 3,
+  93: 1,
+  94: 2
 };
-console.log(myObject);
-/*
-YOUR CODE HERE
-*/
-console.log(myObject);
-
-guillaume@ubuntu:~/0x12$ ./12-object.js
-{ type: 'object', value: 12 }
-{ type: 'object', value: 89 }
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ ./101-sorted.js 
+{ '1': [ '89', '91', '93' ], '2': [ '90', '94' ], '3': [ '92' ] }
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `12-object.js`
+- File: `101-sorted.js`
 </details>
 
 <details>
