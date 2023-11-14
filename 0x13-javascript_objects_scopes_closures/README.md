@@ -306,34 +306,45 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>5. An Integer</summary>
+<summary>5. Square #0</summary>
 
-Write a script that prints `My number: <first argument converted in integer>` if the first argument can be converted to an integer:
+Write a class `Square` that defines a square and inherits from `Rectangle` of `4-rectangle.js`:
 
-- If the argument can’t be converted to an integer, print “Not a number”
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-- You are not allowed to use `try/catch`
+- You must use the `class` notation for defining your class and `extends`
+- The constructor must take 1 argument: `size`
+- The constructor of `Rectangle` must be called (by using `super()`)
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 
-Not a number
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 89
-My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js "89"
-My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 89.89
-My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js School
-Not a number
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 5-main.js
+#!/usr/bin/node
+const Square = require('./5-square');
+
+const s1 = new Square(4);
+s1.print();
+s1.double();
+s1.print();
+
+guillaume@ubuntu:~/0x13$ ./5-main.js
+XXXX
+XXXX
+XXXX
+XXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+XXXXXXXX
+guillaume@ubuntu:~/0x13$
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `5-to_integer.js`
+- File: `5-square.js`
 </details>
 
 <details>
