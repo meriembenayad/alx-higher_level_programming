@@ -520,24 +520,23 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>11. Second biggest!</summary>
+<summary>11. Factor index</summary>
 
-Write a script that searches the second biggest integer in the list of arguments.
+Write a script that imports an array and computes a new array.
 
-- You can assume all arguments can be converted to integer
-- If no argument passed, print `0`
-- If the number of arguments is 1, print `0`
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
+- Your script must import `list` from the file `100-data.js`
+- You must use a `map`. [Tips](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map?v=control)
+- A new list must be created with each value equal to the value of the initial list, multipled by the index in the list
+- Print both the initial list and the new list
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 
-0
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 1
-0
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 4 2 5 3 0 -3
-4
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 100-data.js
+#!/usr/bin/node
+exports.list = [1, 2, 3, 4, 5];
+guillaume@ubuntu:~/0x13$ ./100-map.js 
+[ 1, 2, 3, 4, 5 ]
+[ 0, 2, 6, 12, 20 ]
+guillaume@ubuntu:~/0x13$ 
 ```
 
 ***
