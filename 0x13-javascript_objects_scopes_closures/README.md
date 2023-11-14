@@ -416,41 +416,32 @@ guillaume@ubuntu:~/0x13$
 </details>
 
 <details>
-<summary>8. Square</summary>
+<summary>8. Esrever</summary>
 
-Write a script that prints a square
+Write a function that returns the reversed version of a list:
 
-- The first argument is the size of the square
-- If the first argument can’t be converted to an integer, print “Missing size”
-- You must use the character `X` to print the square
-- You must use `console.log(...)` to print all output
-- You are not allowed to use `var`
-- You must use a loop (`while`, `for`, etc.)
+- Prototype: `exports.esrever = function (list)`
+- You are not allow to use the built-in method `reverse`
 
 ```shell
-guillaume@ubuntu:~/0x12$ ./8-square.js
-Missing size
-guillaume@ubuntu:~/0x12$ ./8-square.js School
-Missing size
-guillaume@ubuntu:~/0x12$ ./8-square.js 2
-XX
-XX
-guillaume@ubuntu:~/0x12$ ./8-square.js 6
-XXXXXX
-XXXXXX
-XXXXXX
-XXXXXX
-XXXXXX
-XXXXXX
-guillaume@ubuntu:~/0x12$ ./8-square.js -3
-guillaume@ubuntu:~/0x12$ 
+guillaume@ubuntu:~/0x13$ cat 8-main.js
+#!/usr/bin/node
+const esrever = require('./8-esrever').esrever;
+
+console.log(esrever([1, 2, 3, 4, 5]));
+console.log(esrever(["School", 89, { id: 12 }, "String"]));
+
+guillaume@ubuntu:~/0x13$ ./8-main.js
+[ 5, 4, 3, 2, 1 ]
+[ 'String', { id: 12 }, 89, 'School' ]
+guillaume@ubuntu:~/0x13$
 ```
 
 ***
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x13-javascript_objects_scopes_closures`
-- File: `8-square.js`
+- File: `8-esrever.js`
 </details>
 
 <details>
