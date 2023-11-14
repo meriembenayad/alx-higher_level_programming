@@ -594,7 +594,7 @@ guillaume@ubuntu:~/0x12$
 
 
 <details>
-<summary>git </summary>
+<summary>17. Increment object</summary>
 
 Update this script by adding a new function `incr` that increments the integer `value`.
 
@@ -630,5 +630,5 @@ guillaume@ubuntu:~/0x12$
 **Repo:**
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x12-javascript-warm_up`
-- File: `0-javascript_is_amazing.js`
+- File: `103-object_fct.js`
 </details>
