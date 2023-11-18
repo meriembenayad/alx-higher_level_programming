@@ -18,8 +18,10 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     user_input = sys.argv[4]
-    query_sql = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
-    cur.execute(query_sql, (user_input + '%',))
+    query_sql = "SELECT * FROM states WHERE name LIKE BINARY '{}'\
+        ORDER BY id ASC".format(
+        user_input)
+    cur.execute(query_sql)
 
     rows = cur.fetchall()
 
