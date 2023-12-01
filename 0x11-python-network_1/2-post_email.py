@@ -16,7 +16,6 @@ if __name__ == "__main__":
     data = urllib.parse.urlencode(values)
     data_byte = data.encode('ascii')
     req_url = urllib.request.Request(url, data_byte)
-    print(req)
 
     with urllib.request.urlopen(req_url) as response:
         body = response.read()
