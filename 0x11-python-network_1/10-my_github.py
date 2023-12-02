@@ -24,6 +24,6 @@ if __name__ == "__main__":
         if 'id' in data:
             print(data['id'])
         else:
-            print('No id found')
+            print('None')
     except ValueError:
         print('Not a valid JSON')
