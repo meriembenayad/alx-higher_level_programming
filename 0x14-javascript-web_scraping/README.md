@@ -9,6 +9,10 @@
 - [request module](https://github.com/request/request)
 - [Modern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
 
+**Note:**
+
+- Your code should be `semistandard` compliant. [Rules of Standard](https://standardjs.com/rules.html) + [semicolons on top](https://github.com/standard/semistandard). Also as reference: [AirBnB style](https://github.com/airbnb/javascript)
+
 ### More Info
 
 #### Install Node 14
@@ -65,7 +69,6 @@ guillaume@ubuntu:~/0x14$
 ```
 ***
 **File:**
-
 - File: `0-readme.js`
 </details>
 
