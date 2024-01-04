@@ -11,7 +11,7 @@ request(apiUrl, (error, response, body) => {
     const data = JSON.parse(body);
     let count = 0;
 
-    for (let movie of data.results) {
+    for (const movie of data.results) {
       if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
         count++;
       }
