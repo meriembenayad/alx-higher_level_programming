@@ -12,11 +12,13 @@ request(apiUrl, (error, response, body) => {
   } else {
     let data;
     try {
-      data = JSON.parse(body);
+      data = JSON.parse(body).results;
       let count = 0;
-      for (const movie of data.results) {
-        if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-          count++;
+      for (const movie in data) {
+        for (let char of data[movie].characters) {
+          if (char.search('/18/') > 0) {
+            count++;
+          }
         }
       }
       console.log(count);
