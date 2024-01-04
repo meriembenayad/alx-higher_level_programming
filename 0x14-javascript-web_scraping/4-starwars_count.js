@@ -15,7 +15,7 @@ request(apiUrl, (error, response, body) => {
       data = JSON.parse(body).results;
       let count = 0;
       for (const movie in data) {
-        for (let char of data[movie].characters) {
+        for (const char of data[movie].characters) {
           if (char.search('/18/') > 0) {
             count++;
           }
