@@ -6,18 +6,22 @@ const apiUrl = process.argv[2];
 
 request(apiUrl, (error, response, body) => {
   if (error) {
-    console.log(error);
+    console.log('Request failed: ', error);
   } else if (response.statusCode !== 200) {
-    console.log(error);
+    console.log('Unexpected status code: ', error);
   } else {
-    const data = JSON.parse(body);
-    let count = 0;
-
-    for (const movie of data.results) {
-      if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-        count++;
+    let data;
+    try {
+      data = JSON.parse(body);
+      let count = 0;
+      for (const movie of data.results) {
+        if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+          count++;
+        }
       }
+      console.log(count);
+    } catch (error) {
+      console.log('Failed to parse response body: ', error);
     }
-    console.log(count);
   }
 });
