@@ -1,7 +1,6 @@
 #!/usr/bin/node
 /* 3. Print the title of Star Wars movie
-where the episode number matches a given integer
-*/
+where the episode number matches a given integer */
 const request = require('request');
 const episode = process.argv[2];
 
