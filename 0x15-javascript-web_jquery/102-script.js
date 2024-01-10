@@ -9,7 +9,7 @@ $(document).ready(function () {
     const url = `https://hellosalut.stefanbohacek.dev/?lang=${lang}`;
 
     $.getJSON(url, function (data) {
-        $('DIV#hello').text(`${data.hello}`); 
+      $('DIV#hello').text(`${data.hello}`);
     });
   });
 });
